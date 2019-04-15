@@ -30,7 +30,6 @@ import javax.persistence.Table;
             query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
             )
 })
-
 @Entity
 public class Employee {
     @Id
@@ -41,7 +40,7 @@ public class Employee {
     @Column(name = "code", nullable = false, unique = true)
     private String code;
 
-    @Column(name ="name", nullable=false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "password", length = 64, nullable = false)
@@ -53,8 +52,8 @@ public class Employee {
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
-    @Column(name ="updated_at", nullable = false)
-    private Integer updated_at;
+    @Column(name = "updated_at", nullable = false)
+    private Timestamp updated_at;
 
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
@@ -107,11 +106,11 @@ public class Employee {
         this.created_at = created_at;
     }
 
-    public Integer getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(Integer updated_at) {
+    public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
 
@@ -122,5 +121,4 @@ public class Employee {
     public void setDelete_flag(Integer delete_flag) {
         this.delete_flag = delete_flag;
     }
-
 }
