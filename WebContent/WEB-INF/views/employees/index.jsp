@@ -7,7 +7,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>従業員 一覧</h2>
+        <h2>従業員　一覧</h2>
         <table id="employee_list">
             <tbody>
                 <tr>
@@ -22,10 +22,10 @@
                         <td>
                             <c:choose>
                                 <c:when test="${employee.delete_flag == 1}">
-                                    (削除済み)
+                                    （削除済み）
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="<c:url value='/employees/show/?id=${employee.id}' />">詳細を表示</a>
+                                    <a href="<c:url value='/employees/show?id=${employee.id}' />">詳細を表示</a>
                                 </c:otherwise>
                             </c:choose>
                         </td>
@@ -35,18 +35,19 @@
         </table>
 
         <div id="pagination">
-            (全 ${employees_count} 件) <br />
+            （全 ${employees_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((employees_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
                     </c:when>
                     <c:otherwise>
-                        <a href="<c:url value='/employees/index?page=${i}' />"></a>&nbsp;
+                        <a href="<c:url value='/employees/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/employees/new' />">新規従業員の登録</a>
+        <p><a href="<c:url value='/employees/new' />">新規従業員の登録</a></p>
+
     </c:param>
 </c:import>
