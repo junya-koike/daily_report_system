@@ -33,22 +33,21 @@ public class ReportsIndexServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         EntityManager em = DBUtil.createEntityManager();
 
         int page;
-        try {
+        try{
             page = Integer.parseInt(request.getParameter("page"));
         } catch(Exception e) {
             page = 1;
         }
         List<Report> reports = em.createNamedQuery("getAllReports", Report.class)
-                                .setFirstResult(15 * (page - 1))
-                                .setMaxResults(15)
-                                .getResultList();
+                                  .setFirstResult(15 * (page - 1))
+                                  .setMaxResults(15)
+                                  .getResultList();
 
         long reports_count = (long)em.createNamedQuery("getReportsCount", Long.class)
-                                      .getSingleResult();
+                                     .getSingleResult();
 
         em.close();
 
@@ -56,11 +55,11 @@ public class ReportsIndexServlet extends HttpServlet {
         request.setAttribute("reports_count", reports_count);
         request.setAttribute("page", page);
         if(request.getSession().getAttribute("flush") != null) {
-            request.setAttribute("flush",  request.getSession().getAttribute("flush"));
+            request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("?WEB-INF/views/reports/index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/index.jsp");
         rd.forward(request, response);
     }
 
