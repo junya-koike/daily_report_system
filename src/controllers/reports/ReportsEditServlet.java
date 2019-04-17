@@ -18,13 +18,13 @@ import utils.DBUtil;
  * Servlet implementation class ReportEditServlet
  */
 @WebServlet("/reports/edit")
-public class ReportEditServlet extends HttpServlet {
+public class ReportsEditServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReportEditServlet() {
+    public ReportsEditServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

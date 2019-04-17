@@ -17,13 +17,13 @@ import utils.DBUtil;
  * Servlet implementation class EmployeeDestroyServlet
  */
 @WebServlet("/employees/destroy")
-public class EmployeeDestroyServlet extends HttpServlet {
+public class EmployeesDestroyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmployeeDestroyServlet() {
+    public EmployeesDestroyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
