@@ -53,6 +53,15 @@ public class ReportsCreateServlet extends HttpServlet {
             }
             r.setReport_date(report_date);
 
+            // 出勤時刻
+            String attendance =rd_str + " "  + request.getParameter("attendance_time") + ":00";
+            r.setAttendance_time(Timestamp.valueOf(attendance));
+
+
+            //退勤時刻
+            String work =rd_str + " "  + request.getParameter("work_time") + ":00";
+            r.setWork_time(Timestamp.valueOf(work));
+
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
 

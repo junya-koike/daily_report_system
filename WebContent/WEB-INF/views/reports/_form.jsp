@@ -20,11 +20,11 @@
 <br /><br />
 
 <label for="attendance_time">出勤時刻</label><br />
-<input type="time" name="attendance_time" step="60" />
+<input type="time" name="attendance_time" value="${report.attendance_time}" step="60" />
 <br /><br />
 
 <label for="work_time">退勤時刻</label><br />
-<input type="time" name="work_time" step="60" />
+<input type="time" name="work_time" value="${report.work_time}" step="60" />
 <br /><br />
 
 <label for="title">タイトル</label><br />

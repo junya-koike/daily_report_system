@@ -45,6 +45,18 @@ public class ReportsUpdateServlet extends HttpServlet {
 
             r.setReport_date(Date.valueOf(request.getParameter("report_date")));
             r.setTitle(request.getParameter("title"));
+
+            //日付を文字列に変換
+            String rd_str = request.getParameter("report_date");
+            // 出勤時刻
+            String attendance =rd_str + " "  + request.getParameter("attendance_time") + ":00";
+            r.setAttendance_time(Timestamp.valueOf(attendance));
+
+
+            //退勤時刻
+            String work =rd_str + " "  + request.getParameter("work_time") + ":00";
+            r.setWork_time(Timestamp.valueOf(work));
+
             r.setContent(request.getParameter("content"));
             r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 

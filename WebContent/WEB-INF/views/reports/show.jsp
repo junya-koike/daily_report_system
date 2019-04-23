@@ -18,6 +18,17 @@
                         <th><fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' /></th>
 
                     </tr>
+
+                    <tr>
+                        <th>出勤時刻</th>
+                        <th><fmt:formatDate value="${report.attendance_time}" type="TIME" timeStyle="SHORT" /></th>
+                    </tr>
+
+                    <tr>
+                        <th>退勤時刻</th>
+                        <th><fmt:formatDate value="${report.work_time}" type="TIME" timeStyle="SHORT" /></th>
+                    </tr>
+
                     <tr>
                         <th>内容</th>
                         <td>

@@ -62,6 +62,28 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+    @Column(name = "attendance_time", nullable = false)     //出勤時刻
+    private Timestamp attendance_time;
+
+    @Column(name = "work_time", nullable = false)   //退勤時刻
+    private Timestamp work_time;
+
+    public Timestamp getAttendance_time() {
+        return attendance_time;
+    }
+
+    public void setAttendance_time(Timestamp attendance_time) {
+        this.attendance_time = attendance_time;
+    }
+
+    public Timestamp getWork_time() {
+        return work_time;
+    }
+
+    public void setWork_time(Timestamp work_time) {
+        this.work_time = work_time;
+    }
+
     public Integer getId() {
         return id;
     }
